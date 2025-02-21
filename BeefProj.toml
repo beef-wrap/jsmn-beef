@@ -1,0 +1,10 @@
+FileVersion = 1
+
+[Project]
+Name = "jsmn-beef"
+TargetType = "BeefLib"
+StartupObject = "jsmn_beef.Program"
+
+[Configs.Debug.Win64]
+CLibType = "DynamicDebug"
+LibPaths = ["$(ProjectDir)\\libs\\jsmn_d.lib"]
