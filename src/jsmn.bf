@@ -26,7 +26,7 @@
 using System;
 using System.Interop;
 
-namespace jsmn_Beef;
+namespace jsmn;
 
 public static class jsmn
 {
@@ -67,9 +67,9 @@ public static class jsmn
 	[CRepr] public struct jsmntok
 	{
 		public jsmntype type;
-		public int start;
-		public int end;
-		public int size;
+		public c_int start;
+		public c_int end;
+		public c_int size;
 		// #ifdef JSMN_PARENT_LINKS
 		//   int parent;
 		// #endif
@@ -81,9 +81,9 @@ public static class jsmn
 	*/
 	[CRepr] public struct jsmn_parser
 	{
-		uint pos; /* offset in the JSON string */
-		uint toknext; /* next token to allocate */
-		int toksuper; /* superior token node, e.g. parent object or array */
+		c_uint pos; /* offset in the JSON string */
+		c_uint toknext; /* next token to allocate */
+		c_int toksuper; /* superior token node, e.g. parent object or array */
 	}
 
 	/**
@@ -96,5 +96,5 @@ public static class jsmn
 	* describing
 	* a single JSON object.
 	*/
-	[CLink] public static extern int jsmn_parse(jsmn_parser* parser, char8* js, uint len, jsmntok* tokens, uint num_tokens);
+	[CLink] public static extern c_int jsmn_parse(jsmn_parser* parser, c_char* js, c_uint len, jsmntok* tokens, c_uint num_tokens);
 }
