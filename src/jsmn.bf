@@ -37,8 +37,7 @@ public static class jsmn
 	* 	o String
 	* 	o Other primitive: number, boolean (true/false) or null
 	*/
-	[CRepr]
-	public enum jsmntype
+	public enum jsmntype : c_int
 	{
 		JSMN_UNDEFINED = 0,
 		JSMN_OBJECT = 1 << 0,
@@ -47,8 +46,7 @@ public static class jsmn
 		JSMN_PRIMITIVE = 1 << 3
 	}
 
-	[CRepr]
-	public enum jsmnerr
+	public enum jsmnerr : c_int
 	{
 		/* Not enough tokens were provided */
 		JSMN_ERROR_NOMEM = -1,

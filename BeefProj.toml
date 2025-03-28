@@ -6,5 +6,7 @@ TargetType = "BeefLib"
 StartupObject = "jsmn_beef.Program"
 
 [Configs.Debug.Win64]
-CLibType = "DynamicDebug"
-LibPaths = ["$(ProjectDir)\\libs\\jsmn_d.lib"]
+LibPaths = ["$(ProjectDir)\\libs\\windows\\x64\\jsmn_d.lib"]
+
+[Configs.Release.Win64]
+LibPaths = ["$(ProjectDir)\\libs\\windows\\x64\\jsmn.lib"]
